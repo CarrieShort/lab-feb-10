@@ -65,3 +65,29 @@ if(answer5 === 'y' || answer5 === 'yes') {
 } else {
   alert(yesNo);
 }
+
+var answer6 =  prompt('How many pets do I have?', 'Must be a number');
+console.log('answer6 correct answer is 4: ' + answer6);
+
+// function to evaluate if isNumber and answer is 4
+var numberGuess = function(answer) {
+  if(parseInt(answer) === 4) {
+    alert('Correct! I have ' + answer + ' pets!');
+    console.log('great should be done.');
+  } else if(isNaN(answer)) {
+    alert('That is not a number. Guess again.');
+    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
+    numberGuess(answer6);
+  } else if(answer < 4) {
+    alert('I have more pets than ' + answer + '. Guess again.');
+    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
+    numberGuess(answer6);
+  } else if(answer > 4) {
+    alert('I have fewer pets than ' + answer + '. Guess again.');
+    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
+    numberGuess(answer6);
+  } else {
+    alert('I have no idea what went wrong');
+  }
+};
+numberGuess(answer6);
