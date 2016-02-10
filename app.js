@@ -97,4 +97,24 @@ var numberGuess = function(answer) {
   }
 };
 numberGuess(answer6);
-alert('You got ' + tally + ' out of 6 questions correct! Good job!');
+
+// stretch question 7 - check array for pet name
+var answer7 = prompt('What is a name of one of my pets?').toLowerCase();
+console.log('answer7 correct answers are feynman, doppler, maxwell, planck. The user answered: ' + answer7);
+
+var petNames = ['feynman', 'doppler', 'maxwell', 'planck'];
+
+for (i=0; i < petNames.length; i++) {
+  if(petNames[i] === answer7) {
+    var rightPet = true;
+    tally++
+    break;
+  }
+}
+if(rightPet) {
+  alert('Yep, ' + answer7 + ' is one of my pets.');
+} else {
+  alert('wrong name');
+}
+
+alert('You got ' + tally + ' out of 7 questions correct! Good job!');
