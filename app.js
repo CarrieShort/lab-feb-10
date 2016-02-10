@@ -72,7 +72,7 @@ console.log('answer6 correct answer is 4: ' + answer6);
 // function to evaluate if isNumber and answer is 4
 var numberGuess = function(answer) {
   if(parseInt(answer) === 4) {
-    alert('Correct! I have ' + answer + 'pets!');
+    alert('Correct! I have ' + answer + ' pets!');
     console.log('great should be done.');
   } else if(isNaN(answer)) {
     alert('That is not a number. Guess again.');
