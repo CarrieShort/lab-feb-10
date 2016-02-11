@@ -20,8 +20,7 @@ var questionArray = [
       ],
       [
         'You got it right! Carrie is my name.',
-        true,
-        yesNo,false
+        true
       ],
 
     ]
@@ -33,18 +32,15 @@ for (i = 0; i < questionArray.length; i++) {
   if (answer === 'y' || answer === 'yes') {
     alert(questionArray[i][2][0][0]);
     if(questionArray[i][2][0][1]) {
-      tally++
+      tally++;
     }
   } else if (answer === 'n' || answer === 'no'){
     alert(questionArray[i][2][1][0]);
     if(questionArray[i][2][1][1]) {
-      tally++
+      tally++;
     }
   } else {
-    alert(questionArray[i][2][2][0]);
-    if(questionArray[i][2][2][1]) {
-      tally++
-    }
+    alert(yesNo);
   }
 }
 console.log(tally);
