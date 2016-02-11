@@ -107,4 +107,8 @@ if(rightPet) {
   alert('wrong name');
 }
 
-alert('You got ' + tally + ' out of 7 questions correct! Good job!');
+if (tally > 4) {
+  alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!');
+} else {
+  alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.');
+}
