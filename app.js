@@ -71,32 +71,25 @@ if(answer5 === 'y' || answer5 === 'yes') {
   alert(yesNo);
 }
 
-var answer6 =  prompt('How many pets do I have?', 'Must be a number');
-console.log('answer6 correct answer is 4: ' + answer6);
 
-// function to evaluate if isNumber and answer is 4
-var numberGuess = function(answer) {
-  if(parseInt(answer) === 4) {
-    alert('Correct! I have ' + answer + ' pets!');
+
+//while loop to evaluate if answer is 4
+while(answer6 !== 4) {
+  var answer6 =  parseInt(prompt('How many pets do I have?', 'Must be a number'));
+  console.log('answer6 correct answer is 4: ' + answer6);
+  if(answer6 === 4) {
+    alert('Correct! I have ' + answer6 + ' pets!');
     tally++;
     console.log('great should be done.');
-  } else if(isNaN(answer)) {
-    alert('That is not a number. Guess again.');
-    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
-    numberGuess(answer6);
-  } else if(answer < 4) {
-    alert('I have more pets than ' + answer + '. Guess again.');
-    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
-    numberGuess(answer6);
-  } else if(answer > 4) {
-    alert('I have fewer pets than ' + answer + '. Guess again.');
-    var answer6 =  prompt('How many pets do I have?', 'Must be a number');
-    numberGuess(answer6);
+  } else if(answer6 < 4) {
+    alert('I have more pets than ' + answer6 + '. Guess again.');
+  } else if(answer6 > 4) {
+    alert('I have fewer pets than ' + answer6 + '. Guess again.');
   } else {
-    alert('I have no idea what went wrong');
+    alert('That is not a number. Guess again.');
   }
-};
-numberGuess(answer6);
+}
+
 
 // stretch question 7 - check array for pet name
 var answer7 = prompt('What is a name of one of my pets?').toLowerCase();
