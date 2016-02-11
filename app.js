@@ -22,7 +22,6 @@ var questionArray = [
         'You got it right! Carrie is my name.',
         true
       ],
-
     ]
   ],
   //Question 2
