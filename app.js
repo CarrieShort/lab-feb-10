@@ -24,6 +24,22 @@ var questionArray = [
       ],
 
     ]
+  ],
+  //Question 2
+  [
+    'Are all of my pets named after physicists?',
+    'Answer2 correct answer was y or yes, and user answered: ',
+    [
+      [
+        'You got it right ' + userName + '! Feynman, Maxwell, Doppler and Planck',
+        true
+      ],
+      [
+        'Wrong ' + userName + '! They are named after physicists!',
+        false
+      ],
+
+    ]
   ]
 ];
 for (i = 0; i < questionArray.length; i++) {
@@ -44,17 +60,6 @@ for (i = 0; i < questionArray.length; i++) {
   }
 }
 console.log(tally);
-
-var answer2 = prompt('Are all of my pets named after physicists?').toLowerCase();
-console.log('answer2 correct answer was y or yes, and user answered: ' + answer2);
-if(answer2 === 'y' || answer2 === 'yes'){
-  alert('You got it right ' + userName + '! Feynman, Maxwell, Doppler and Planck');
-  tally++;
-} else if(answer2 === 'n' || answer2 === 'no'){
-  alert('Wrong ' + userName + '! They are named after physicists!');
-} else {
-  alert(yesNo);
-}
 
 var answer3 = prompt('Did I dress up as Troy (from Startrek) for a murder mystery party?').toLowerCase();
 console.log('answer3 correct answer was n or no, and user answered: ' + answer3);
