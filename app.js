@@ -11,16 +11,16 @@ alert('Hi there, ' + userName + ', I hope you read carefully, because I\'m going
 var questionArray = [
   //Question 1
   [
-    'Is my name Keri?',
-    'answer1 correct answer was n or no, and user answered: ',
+    'Is my name Keri?', //[0][1]
+    'answer1 correct answer was n or no, and user answered: ', //[0][2]
     [
       [
-        'Sorry ' + userName + '. That was a trick question. It\'s Carrie not Keri',
-        false
+        'Sorry ' + userName + '. That was a trick question. It\'s Carrie not Keri', //[0][2][0][0]
+        false //[0][2][1][1]
       ],
       [
-        'You got it right! Carrie is my name.',
-        true
+        'You got it right! Carrie is my name.', //[0][2][1][0]
+        true //[0][2][1][1]
       ],
     ]
   ],
@@ -39,8 +39,57 @@ var questionArray = [
       ],
 
     ]
+  ],
+  //Question 3
+  [
+    'Did I dress up as Troy (from Startrek) for a murder mystery party?',
+    'answer3 correct answer was n or no, and user answered: ',
+    [
+      [
+        'Wrong, who would ever want to be Troy.',
+        false
+      ],
+      [
+        'Congratulations ' + userName + ', You got it right. I was Guinan.',
+        true
+      ],
+
+    ]
+  ],
+  //Question 4
+  [
+    'Do I have a college degree?',
+    'answer4 correct answer was n or no, and user answered: ',
+    [
+      [
+        'Awww ' + userName + '. It\'s nice you think that, but you are wrong!',
+        false
+      ],
+      [
+        'It\'s true, I never completed my student teaching.',
+        true
+      ],
+
+    ]
+  ],
+  //Question 5
+  [
+    'Do I want to own a lakehouse?',
+    'answer5 correct answer was y or yes, and user answered: ',
+    [
+      [
+        userName + ' can come hang at my future lake place.',
+        true
+      ],
+      [
+        userName + ', I\'m disappointed in you. Who doesn\'t want a lake place?',
+        false
+      ],
+
+    ]
   ]
 ];
+
 for (i = 0; i < questionArray.length; i++) {
   var answer = prompt(questionArray[i][0]).toLowerCase();
   console.log(questionArray[i][1] + answer);
@@ -57,40 +106,6 @@ for (i = 0; i < questionArray.length; i++) {
   } else {
     alert(yesNo);
   }
-}
-console.log(tally);
-
-var answer3 = prompt('Did I dress up as Troy (from Startrek) for a murder mystery party?').toLowerCase();
-console.log('answer3 correct answer was n or no, and user answered: ' + answer3);
-if(answer3 === 'y' || answer3 ==='yes'){
-  alert('Wrong, who would ever want to be Troy.');
-} else if(answer3 === 'n' || answer3 === 'no'){
-  alert('Congratulations ' + userName + ', You got it right. I was Guinan.');
-  tally++;
-} else {
-  alert(yesNo);
-}
-
-var answer4 = prompt('Do I have a college degree?').toLowerCase();
-console.log('answer4 correct answer was n or no, and user answered: ' +answer4);
-if(answer4 === 'y' || answer4 === 'yes'){
-  alert('Awww ' + userName + '. It\'s nice you think that, but you are wrong!' );
-} else if(answer4 ==='n' || answer4 === 'no'){
-  alert('It\'s true, I never completed my student teaching.');
-  tally++;
-} else {
-  alert(yesNo);
-}
-
-var answer5 = prompt('Do I want to own a lakehouse?').toLowerCase();
-console.log('answer5 correct answer was y or yes, and user answered: ' +answer5);
-if(answer5 === 'y' || answer5 === 'yes') {
-  alert(userName + ' can come hang at my future lake place.');
-  tally++;
-} else if(answer5 === 'n' || answer5 === 'no'){
-  alert(userName + ', I\'m disappointed in you. Who doesn\'t want a lake place?');
-} else {
-  alert(yesNo);
 }
 
 //while loop to evaluate if answer is 4
