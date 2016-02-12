@@ -1,12 +1,18 @@
 // JS file for Feb 9 class demo
 // A guessing game about you with 5 questions for the user, and a different response to the user depending upon if they got the right or wrong answer.
 
+function printAlert(alertMsg, docId){
+  var el = document.getElementById(docId);
+  el.textContent = alertMsg;
+};
+
 var yesNo = 'You should have given a Y or N answer.'; //dry improper answer format.
 var tally = 0; // I'll be using this to tally number of correct answers at the end.
 
 var userName = prompt('What is your name?');
 console.log('The user said their name is ' + userName);
-alert('Hi there, ' + userName + ', I hope you read carefully, because I\'m going to ask you some questions about me. Answer with Y or N.');
+// alert('Hi there, ' + userName + ', I hope you read carefully, because I\'m going to ask you some questions about me. Answer with Y or N.');
+printAlert('Hi there, ' + userName + ', I hope you read carefully, because I\'m going to ask you some questions about me. Answer with Y or N.', 'print1');
 
 var questionArray = [
   //Question 1
@@ -98,17 +104,23 @@ for (i = 0; i < questionArray.length; i++) {
 
 
     if (answer === 'y' || answer === 'yes') {
-      alert(questionArray[i][2][0][0]);
+      // alert(questionArray[i][2][0][0]);
+      printAlert(questionArray[i][2][0][0], 'print' + (i + 2));
+
       if(questionArray[i][2][0][1]) {
         tally++;
       }
     } else if (answer === 'n' || answer === 'no'){
-      alert(questionArray[i][2][1][0]);
+      // alert(questionArray[i][2][1][0]);
+      printAlert(questionArray[i][2][1][0], 'print' + (i + 2));
+
       if(questionArray[i][2][1][1]) {
         tally++;
       }
     } else {
-      alert(yesNo);
+      // alert(yesNo);
+      printAlert(yesNo, 'print' + (i + 2));
+
     }
   };
   res1 (answer);
@@ -123,27 +135,37 @@ while(answer6 !== 4 && numberGuesses < 4) {
   function res2 (answer6){
 
     if (isNaN(answer6)){
-      alert('That is not a number. Guess again this time use a number.');
+      // alert('That is not a number. Guess again this time use a number.');
+      printAlert('That is not a number. Guess again this time use a number.', 'print7');
+
       numberGuesses++;
     } else if(answer6 === 4) {
-      alert('Correct! I have ' + answer6 + ' pets!');
+      // alert('Correct! I have ' + answer6 + ' pets!');
+      printAlert('Correct! I have ' + answer6 + ' pets!', 'print7');
       tally++;
       console.log('great should be done.');
     } else if(answer6 < 4) {
-      alert('I have more pets than ' + answer6 + '. Guess again.');
+      // alert('I have more pets than ' + answer6 + '. Guess again.');
+      printAlert('I have more pets than ' + answer6 + '. Guess again.','print7');
       numberGuesses++;
     } else if(answer6 > 4) {
-      alert('I have fewer pets than ' + answer6 + '. Guess again.');
+      // alert('I have fewer pets than ' + answer6 + '. Guess again.');
+      printAlert('I have fewer pets than ' + answer6 + '. Guess again.','print7');
+
       numberGuesses++;
     } else {
-      alert('I don\'t know what happened');
+      // alert('I don\'t know what happened');
+      printAlert('I don\'t know what happened','print7');
+
       numberGuesses++;
     }
   };
   res2 (answer6);
 }
 if (numberGuesses === 4) {
-  alert('You\'ve had too many guesses. The answer is 4. Let\'s move on to the next question')
+  // alert('You\'ve had too many guesses. The answer is 4. Let\'s move on to the next question');
+  printAlert('You\'ve had too many guesses. The answer is 4. Let\'s move on to the next question','print7');
+
 }
 
 // stretch question 7 - check array for pet name
@@ -160,18 +182,26 @@ function res3(answer7){
     }
   }
   if(rightPet) {
-    alert('Yep, ' + answer7 + ' is one of my pets.');
+    // alert('Yep, ' + answer7 + ' is one of my pets.');
+    printAlert('Yep, ' + answer7 + ' is one of my pets.','print8');
+
   } else {
-    alert('wrong name');
+    // alert('wrong name');
+    printAlert('wrong name','print8');
+
   }
 };
 res3(answer7);
 
 function res4(){
   if (tally > 4) {
-    alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!');
+    // alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!');
+    printAlert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!','print9');
+
   } else {
-    alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.');
+    // alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.');
+    printAlert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.','print9');
+
   }
 };
 res4();
