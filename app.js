@@ -93,19 +93,25 @@ var questionArray = [
 for (i = 0; i < questionArray.length; i++) {
   var answer = prompt(questionArray[i][0]).toLowerCase();
   console.log(questionArray[i][1] + answer);
-  if (answer === 'y' || answer === 'yes') {
-    alert(questionArray[i][2][0][0]);
-    if(questionArray[i][2][0][1]) {
-      tally++;
+
+  function res1 (answer){
+
+
+    if (answer === 'y' || answer === 'yes') {
+      alert(questionArray[i][2][0][0]);
+      if(questionArray[i][2][0][1]) {
+        tally++;
+      }
+    } else if (answer === 'n' || answer === 'no'){
+      alert(questionArray[i][2][1][0]);
+      if(questionArray[i][2][1][1]) {
+        tally++;
+      }
+    } else {
+      alert(yesNo);
     }
-  } else if (answer === 'n' || answer === 'no'){
-    alert(questionArray[i][2][1][0]);
-    if(questionArray[i][2][1][1]) {
-      tally++;
-    }
-  } else {
-    alert(yesNo);
-  }
+  };
+  res1 (answer);
 }
 
 //while loop to evaluate if answer is 4
@@ -113,23 +119,28 @@ var numberGuesses = 0;
 while(answer6 !== 4 && numberGuesses < 4) {
   var answer6 =  parseInt(prompt('How many pets do I have?', 'Must be a number'));
   console.log('answer6 correct answer is 4: ' + answer6);
-  if (isNaN(answer6)){
-    alert('That is not a number. Guess again this time use a number.');
-    numberGuesses++;
-  } else if(answer6 === 4) {
-    alert('Correct! I have ' + answer6 + ' pets!');
-    tally++;
-    console.log('great should be done.');
-  } else if(answer6 < 4) {
-    alert('I have more pets than ' + answer6 + '. Guess again.');
-    numberGuesses++;
-  } else if(answer6 > 4) {
-    alert('I have fewer pets than ' + answer6 + '. Guess again.');
-    numberGuesses++;
-  } else {
-    alert('I don\'t know what happened');
-    numberGuesses++;
-  }
+
+  function res2 (answer6){
+
+    if (isNaN(answer6)){
+      alert('That is not a number. Guess again this time use a number.');
+      numberGuesses++;
+    } else if(answer6 === 4) {
+      alert('Correct! I have ' + answer6 + ' pets!');
+      tally++;
+      console.log('great should be done.');
+    } else if(answer6 < 4) {
+      alert('I have more pets than ' + answer6 + '. Guess again.');
+      numberGuesses++;
+    } else if(answer6 > 4) {
+      alert('I have fewer pets than ' + answer6 + '. Guess again.');
+      numberGuesses++;
+    } else {
+      alert('I don\'t know what happened');
+      numberGuesses++;
+    }
+  };
+  res2 (answer6);
 }
 if (numberGuesses === 4) {
   alert('You\'ve had too many guesses. The answer is 4. Let\'s move on to the next question')
@@ -139,21 +150,28 @@ if (numberGuesses === 4) {
 var answer7 = prompt('What is a name of one of my pets?').toLowerCase();
 console.log('answer7 correct answers are feynman, doppler, maxwell, planck. The user answered: ' + answer7);
 var petNames = ['feynman', 'doppler', 'maxwell', 'planck'];
-for (i=0; i < petNames.length; i++) {
-  if(petNames[i] === answer7) {
-    var rightPet = true;
-    tally++
-    break;
-  }
-}
-if(rightPet) {
-  alert('Yep, ' + answer7 + ' is one of my pets.');
-} else {
-  alert('wrong name');
-}
 
-if (tally > 4) {
-  alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!');
-} else {
-  alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.');
-}
+function res3(answer7){
+  for (i=0; i < petNames.length; i++) {
+    if(petNames[i] === answer7) {
+      var rightPet = true;
+      tally++
+      break;
+    }
+  }
+  if(rightPet) {
+    alert('Yep, ' + answer7 + ' is one of my pets.');
+  } else {
+    alert('wrong name');
+  }
+};
+res3(answer7);
+
+function res4(){
+  if (tally > 4) {
+    alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '! Good job!');
+  } else {
+    alert('You got ' + tally + ' out of 7 questions correct, ' + userName + '. Better luck next time.');
+  }
+};
+res4();
